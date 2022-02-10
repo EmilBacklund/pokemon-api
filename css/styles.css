@@ -1,13 +1,12 @@
 * {
-  font-family: 'Play', sans-serif;
+  font-family: "Play", sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  margin: 0 auto;
 }
 
 body {
-  background-image: url('/images/happy-pika.jpg');
+  background-image: url("/images/happy-pika.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -15,7 +14,7 @@ body {
 }
 
 .sad {
-  background-image: url('/poke-poke/images/sad-pikka.png');
+  background-image: url("/poke-poke/images/sad-pikka.png");
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -31,23 +30,26 @@ h1 {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
+  gap: 60px;
+  margin: 40px 20px;
 }
 
 .pokemons li {
+  margin: 0 auto;
+  position: relative;
   width: 250px;
   height: 250px;
   background: linear-gradient(180deg, #f0f0f0 50%, #ee1515 50%);
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 20px 60px 60px 20px;
   font-size: 1.2rem;
   font-weight: bold;
   border-radius: 100%;
   box-shadow: 0px 0px 20px 1px #222224, inset 0px -4px 10px 0px #222224;
 }
 
-.pokemons li span {
+.pokemons li .pokemon-banner {
   padding: 12px;
   width: 100%;
   background-color: #222224;
@@ -61,7 +63,7 @@ h1 {
   transition: 0.3s ease-in;
 }
 
-.pokemons li span:hover {
+.pokemons li .pokemon-banner:hover {
   transform: scale(1.075);
   transition: 0.3s ease-in;
   cursor: pointer;
@@ -83,7 +85,7 @@ h1 {
 }
 
 .pokeball:after {
-  content: '';
+  content: "";
   position: absolute;
   width: 60px;
   height: 30px;
@@ -93,7 +95,7 @@ h1 {
 }
 
 .pokeball:before {
-  content: '';
+  content: "";
   position: absolute;
   background-color: #fff;
   width: 10px;
@@ -116,7 +118,7 @@ h1 {
 }
 
 .my-input {
-  background-image: url('/poke-poke/images/magnifying-glass-solid.svg'); /* Add a search icon to input */
+  background-image: url("/images/magnifying-glass-solid.svg"); /* Add a search icon to input */
   background-position: 10px 10px; /* Position the search icon */
   background-repeat: no-repeat; /* Do not repeat the icon image */
   background-size: 22px;
@@ -124,31 +126,67 @@ h1 {
   min-width: 300px;
   font-size: 16px;
   padding: 12px 20px 12px 40px;
-  border: 1px solid #ddd;
+  border: 2px solid #222224;
   margin: 0 20px 20px 20px;
 }
 
 .menu {
   margin: 30px 20px 0;
-  background-color: rgba(0, 0, 0, 0.73);
-  width: 300px;
+  background-color: rgba(0, 0, 0, 0.84);
+  min-width: 300px;
+  width: 20%;
   height: 60px;
   border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 20px;
 }
 
 .menu a {
   color: #ddd;
   text-decoration: none;
   font-size: 1.6rem;
-  font-family: 'open sans', sans-serif;
+  font-family: "open sans", sans-serif;
   font-weight: 700;
 }
 
 .menu a.active {
-  color: #ee1515;
+  color: #f6cf57;
+}
+
+.gotcha {
+  background: url("/images/gotcha.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  top: -50px;
+  cursor: pointer;
+  transition: 0.3s ease-in;
+}
+
+.pokemons li .gotcha:hover {
+  transform: scale(1.175);
+  transition: 0.3s ease-in;
+}
+
+.success {
+  background: url("/images/success.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  top: -35px;
+  cursor: pointer;
+  transition: 0.3s ease-in;
+}
+
+.success:hover {
+  transform: scale(1.175);
+  transition: 0.3s ease-in;
 }
 
 @media screen and (max-width: 680px) {
