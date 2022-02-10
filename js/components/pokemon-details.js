@@ -9,8 +9,8 @@ const API_URL = `https://pokeapi.co/api/v2/pokemon/${pokemonName}`;
 const heading = document.querySelector("h1");
 
 // console.log(API_URL);
-
-const pokemonDetails = document.querySelector(".pokemons");
+const pokemonDetailNumber = document.querySelector(".pokemon-detail-number");
+const pokemonDetails = document.querySelector(".pokemon-detail");
 
 async function getPokemonDetails() {
   try {
@@ -19,7 +19,11 @@ async function getPokemonDetails() {
     console.log("singlePokeDetails", singlePokeDetails); //TODO: Shows all DATA you can play with
     const pokemonWeight = singlePokeDetails.weight;
     console.log(pokemonWeight);
-    pokemonDetails.innerHTML = `<li><span>The Pokemons weight is: ${pokemonWeight}</span></li>`;
+    pokemonDetails.innerHTML = `
+    <li class="detail-heading">${pokemonName}:</li>
+    <li>
+    <span class="${pokemonDetailNumber}">The Pokemons weight is: <span class="important-detail">${pokemonWeight}</span> lbs.</span>
+    </li>`;
     heading.innerHTML += ` ${pokemonName}`;
   } catch (error) {
     console.log(error);

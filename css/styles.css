@@ -5,16 +5,8 @@
   box-sizing: border-box;
 }
 
-body {
+.container {
   background-image: url("/images/happy-pika.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-}
-
-.sad {
-  background-image: url("/poke-poke/images/sad-pikka.png");
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -207,4 +199,59 @@ a {
   h1 {
     font-size: 2rem;
   }
+}
+
+/*! Detail Page */
+
+.pokemon-detail {
+  margin-left: 20px;
+  font-size: 1.2rem;
+  min-height: 200px;
+  max-width: 520px;
+  min-width: 310px;
+  width: 20%;
+  padding: 20px;
+  background: #0d0d0d;
+  color: #ddd;
+  font-family: "open sans";
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  text-transform: capitalize;
+}
+
+.detail__page__container {
+  background-image: url("/images/sad-pikka.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.detail__page__container h1 {
+  color: #ddd;
+  text-transform: capitalize;
+}
+
+.detail__page__container .menu {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.detail__page__container a {
+  color: #0d0d0d;
+}
+
+.detail__page__container a.active {
+  color: #ee1515;
+}
+
+.detail-heading {
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 40px;
+}
+
+.important-detail {
+  font-size: 1.8rem;
+  margin-left: 4px;
 }
