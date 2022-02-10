@@ -144,15 +144,25 @@ h1 {
 }
 
 .menu a {
-  color: #ddd;
-  text-decoration: none;
   font-size: 1.6rem;
   font-family: "open sans", sans-serif;
   font-weight: 700;
+  color: #ddd;
+  transition: 0.2s ease-in;
 }
 
 .menu a.active {
   color: #f6cf57;
+}
+
+a {
+  text-decoration: none;
+  color: #ddd;
+}
+
+.menu a:hover {
+  transform: scale(1.075);
+  transition: 0.2s ease-in;
 }
 
 .gotcha {

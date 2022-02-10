@@ -1,9 +1,12 @@
 import { getExistingPokemons } from "/js/components/catchFunction.js";
 
-const API = "https://pokeapi.co/api/v2/pokemon?offset=20&limit=1118";
+const API = "https://pokeapi.co/api/v2/pokemon?&limit=1118";
 const pokeContainer = document.querySelector(".pokemons");
 
 const catchingPokemons = getExistingPokemons();
+
+const myCatchedPokemon = JSON.parse(localStorage.getItem("catched"));
+console.log(myCatchedPokemon);
 
 async function getPokemon() {
   try {
@@ -15,16 +18,31 @@ async function getPokemon() {
     for (let i = 0; i < pokemonData.length; i++) {
       let cssClass = "gotcha";
 
-      const doesPokeExist = catchingPokemons.find(function (fav) {
-        return parseInt(fav.id) === [i];
-      });
+      // const doesPokeExist = myCatchedPokemon.find(function (fav) {
+      //   // return parseInt(fav.id) === [i];
+      //   return fav.id === pokemonData[i];
+      // });
+      // console.log(doesPokeExist);
 
-      if (doesPokeExist) {
-        cssClass = "success";
+      // if (doesPokeExist) {
+      //   cssClass = "success";
+      // }
+      if (myCatchedPokemon && myCatchedPokemon.length > 0) {
+        for (let j = 0; j < myCatchedPokemon.length; j++) {
+          console.log(myCatchedPokemon[j]);
+          const singleCatchedPokemonName = myCatchedPokemon[j].name;
+          console.log(singleCatchedPokemonName);
+          console.log(pokemonData[i].name);
+          if (singleCatchedPokemonName === pokemonData[i].name) {
+            cssClass = "success";
+          }
+        }
       }
 
       pokeContainer.innerHTML += `<li>
-      <span class="pokemon-banner">${pokemonData[i].name}</span>
+      <span class="pokemon-banner"><a href="pokemon-details.html?name=${
+        pokemonData[i].name
+      }">${pokemonData[i].name}</a></span>
       <span class="${cssClass}" data-id="${[i]}" data-name="${
         pokemonData[i].name
       }"></span>
